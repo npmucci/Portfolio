@@ -1,7 +1,3 @@
-/**
- * main.js - Portfolio simplificado
- * Mantiene: Typed.js, scroll suave, menú móvil y back-to-top
- */
 
 (function() {
   "use strict";
@@ -37,7 +33,7 @@
     })
   }
 
-  /** Navbar links active state al hacer scroll */
+  /** Activar links de navbar al hacer scroll */
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -55,7 +51,7 @@
   window.addEventListener('load', navbarlinksActive)
   document.addEventListener('scroll', navbarlinksActive)
 
-  /** Back to top button */
+  /** Botón de volver arriba */
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
@@ -69,14 +65,14 @@
     document.addEventListener('scroll', toggleBacktotop)
   }
 
-  /** Mobile nav toggle */
+  
   on('click', '.mobile-nav-toggle', function(e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
 
-  /** Scroll con offset al hacer click en links */
+
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
